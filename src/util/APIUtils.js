@@ -33,7 +33,18 @@ export function getCurrentUser() {
         method: 'GET'
     });
 }
+export function getCardCall(prompt) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    console.log("worked");
+    const url = `${API_BASE_URL}/chat?prompt=${prompt}`;
 
+    return request({
+        url: url, 
+        method: 'GET'
+    });
+}
 export function login(loginRequest) {
     return request({
         url: API_BASE_URL + "/auth/login",
