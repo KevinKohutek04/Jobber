@@ -37,12 +37,16 @@ export function getCardCall(prompt) {
     if (!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
     }
-    console.log("worked");
-    const url = `${API_BASE_URL}/chat?prompt=${prompt}`;
+    const url = `${API_BASE_URL}/Devchat?prompt=${prompt}`;
 
     return request({
         url: url, 
         method: 'GET'
+    }).then(response => {
+        return response;
+    }).catch(error => {
+        console.error(error);
+        return Promise.reject(error);
     });
 }
 export function login(loginRequest) {

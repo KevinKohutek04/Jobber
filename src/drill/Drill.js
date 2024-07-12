@@ -6,11 +6,20 @@ import './Drill.css';
 class Drill extends Component {
     constructor(props) {
         super(props);
-        this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.state = {
+            inputText: ""
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
-    handleButtonClick() {
-        getCardCall("test")
+    handleInputChange(event) {
+        this.setState({ inputText: event.target.value });
+    }
+
+    handleFormSubmit(event) {
+        event.preventDefault();
+        getCardCall(this.state.inputText)
             .then(response => {
                 console.log(response);
             })
@@ -30,13 +39,22 @@ class Drill extends Component {
 
         return (
             <div className="Drill-main">
-                <button onClick={this.handleButtonClick}>Call API</button>
+                <form onSubmit={this.handleFormSubmit}>
+                    <input 
+                        type="text" 
+                        value={this.state.inputText} 
+                        onChange={this.handleInputChange} 
+                        placeholder="Enter text"
+                    />
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         );
     }
 }
 
 export default Drill;
+
 /*constructor(props) {
         super(props);
         this.state = {
