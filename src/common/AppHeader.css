@@ -1,15 +1,18 @@
 .app-header {
     font-family: Trebuchet MS;
     height: 60px;
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 10;
-    
+    background-color: #fcfbf4;
 }
 
 .app-title {
     line-height: 60px;
     vertical-align: middle;
     font-size: 1.35em;
+    font-weight: 500;
+    color: #7fa6b0;
 }
 
 .app-branding {

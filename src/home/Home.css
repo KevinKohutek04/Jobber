@@ -35,3 +35,50 @@
     font-weight: 500;
     font-size: 32px;
 }
+.home-container-text {
+    color: #fcfbf4;
+    font-weight: 400;
+    font-size: 22px;
+}
+.home-container-disBox {
+    margin-top: 50px;
+    background-color: #0e222b;
+    height: 350px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px gray;
+    transition: background-color 0.3s ease;
+}
+
+.home-container-disBox:hover {
+    background-color: #1f3a47;
+}
+.home-container-words {
+    display: flex;
+    flex-direction: column;
+    width: 69%;
+    height: 100%;
+}
+.home-container-image {
+    width: 30%;
+    height: 100%;
+}
+.home-container-end {
+    margin-top: 50px;
+    width: 100%;
+    height: 80px;
+    background-color: #0e222b;
+}
+.home-container-start {
+    color: #7fa6b0;
+    font-weight: 900;
+    font-size: 26px;
+}
+.home-container-sep {
+    margin-top: 30px;
+    width: 1px;
+    height: 80%;
+    background-color: grey;
+}
