@@ -1,28 +1,14 @@
 import React, { Component } from 'react';
 import './Home.css';
+import drill from '../img/MD.png';
 
 class Home extends Component {
     render() {
         return (
             <div className="home-container">
-                <div className="container">
-                    <div className="graf-bg-container">
-                        <div className="graf-layout">
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                            <div className="graf-circle"></div>
-                        </div>
-                    </div>
-                    <h1 className="home-title">Spring Boot React OAuth2 Social Login Demo</h1>
-                </div>
+                <img src={drill} alt="Example" className="home-container-drill" />
+                <span className="home-container-title" style={{ transform: 'translateY(-55px)' }}>Welcome to Mind drill</span>
+                <span className='home-container-subtitle' style={{ transform: 'translateY(-55px)' }}>an AI powered interview bot</span>
             </div>
         )
     }

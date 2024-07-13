@@ -1,33 +1,58 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
-import { getCardCall } from "../util/APIUtils";
+import { getOffline, setAPIkey, questionChat, addClosed, personalInfo } from "../util/APIUtils";
 import './Drill.css';
 
 class Drill extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            inputText: ""
+            apiKeyText: "",
+            questionChatText: ""
         };
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleOffline = this.handleOffline.bind(this);
+        this.handleAPIKeyInputChange = this.handleAPIKeyInputChange.bind(this);
+        this.handleAPIKeyFormSubmit = this.handleAPIKeyFormSubmit.bind(this);
+        this.handleQuestionChatInputChange = this.handleQuestionChatInputChange.bind(this);
+        this.handleQuestionChatFormSubmit = this.handleQuestionChatFormSubmit.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.personalInfo = this.personalInfo.bind(this);
     }
-
-    handleInputChange(event) {
-        this.setState({ inputText: event.target.value });
+    //offline
+    handleAPIKeyInputChange(event) {
+        this.setState({ apiKeyText: event.target.value });
     }
-
-    handleFormSubmit(event) {
+    handleAPIKeyFormSubmit(event) {
         event.preventDefault();
-        getCardCall(this.state.inputText)
+        setAPIkey(this.props.currentUser.id, this.state.apiKeyText)
             .then(response => {
-                console.log(response);
+                console.log("API Key set successfully:", response);
             })
             .catch(error => {
-                console.error(error);
+                console.error("Error setting API Key:", error);
             });
     }
 
+    // AI
+    handleQuestionChatInputChange(event) {
+        this.setState({ questionChatText: event.target.value });
+    }
+
+    handleQuestionChatFormSubmit(event) {
+        event.preventDefault();
+        console.log("Question Chat Text:", this.state.questionChatText + "::" + this.props.currentUser.id);
+        questionChat(this.state.questionChatText, this.props.currentUser.id)
+    }
+
+    handleOffline(type) {
+        getOffline(type);
+    }
+    handleClose() {
+        addClosed(7, 400, 9, this.props.currentUser.id);
+    }
+    personalInfo() {
+        personalInfo(this.props.currentUser.id);
+    }
     render() {
         if (this.props.authenticated) {
             return <Redirect
@@ -39,30 +64,33 @@ class Drill extends Component {
 
         return (
             <div className="Drill-main">
-                <form onSubmit={this.handleFormSubmit}>
+                <button onClick={() => this.handleOffline(1)}>Offline</button>
+                <form onSubmit={this.handleAPIKeyFormSubmit}>
                     <input 
                         type="text" 
-                        value={this.state.inputText} 
-                        onChange={this.handleInputChange} 
-                        placeholder="Enter text"
+                        value={this.state.apiKeyText} 
+                        onChange={this.handleAPIKeyInputChange} 
+                        placeholder="API Key" 
                     />
                     <button type="submit">Submit</button>
                 </form>
+                <form onSubmit={this.handleQuestionChatFormSubmit}>
+                    <input 
+                        type="text" 
+                        value={this.state.questionChatText} 
+                        onChange={this.handleQuestionChatInputChange} 
+                        placeholder="Question Chat" 
+                    />
+                    <button type="submit">Submit</button>
+                </form>
+                <button onClick={() => this.handleClose()}>Addclosed</button>
+                <button onClick={() => this.personalInfo()}>personalInfo</button>
             </div>
         );
     }
 }
 
+
 export default Drill;
-
-/*constructor(props) {
-        super(props);
-        this.state = {
-            submitted: false,
-        };
-    }
-
-    handleSubmit = () => {
-        this.setState({ submitted: true });
-        <button onClick={this.handleSubmit}>Submit</button>
-     */
+//@GetMapping("/personalInfo")
+//public ResponseEntity<?> personalInfo(@RequestParam long userid) {

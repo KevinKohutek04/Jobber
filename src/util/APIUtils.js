@@ -33,16 +33,81 @@ export function getCurrentUser() {
         method: 'GET'
     });
 }
-export function getCardCall(prompt) {
+export function getOffline(type) {
     if (!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");
     }
-    const url = `${API_BASE_URL}/Devchat?prompt=${prompt}`;
+    const url = `${API_BASE_URL}/questionChatOffline?type=${type}`;
 
     return request({
         url: url, 
         method: 'GET'
     }).then(response => {
+        return response;
+    }).catch(error => {
+        console.error(error);
+        return Promise.reject(error);
+    });
+}
+export function setAPIkey(userid, api) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    const url = `${API_BASE_URL}/addAPIkey?userid=${userid}&api=${api}`;
+
+    return request({
+        url: url, 
+        method: 'POST'
+    }).then(response => {
+        return response;
+    }).catch(error => {
+        console.error(error);
+        return Promise.reject(error);
+    });
+}
+export function questionChat(prompt, userid) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    const url = `${API_BASE_URL}/questionChat?prompt=${prompt}&userid=${userid}`;
+
+    return request({
+        url: url, 
+        method: 'GET'
+    }).then(response => {
+        return response;
+    }).catch(error => {
+        console.error(error);
+        return Promise.reject(error);
+    });
+}
+export function addClosed(score, time, clickOff, userid) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    const url = `${API_BASE_URL}/addClosed?score=${score}&time=${time}&clickOff=${clickOff}&userid=${userid}`;
+
+    return request({
+        url: url, 
+        method: 'POST'
+    }).then(response => {
+        return response;
+    }).catch(error => {
+        console.error(error);
+        return Promise.reject(error);
+    });
+}
+export function personalInfo( userid ) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    const url = `${API_BASE_URL}/personalInfo?userid=${userid}`;
+
+    return request({
+        url: url, 
+        method: 'GET'
+    }).then(response => {
+        console.log( response );
         return response;
     }).catch(error => {
         console.error(error);
@@ -64,3 +129,7 @@ export function signup(signupRequest) {
         body: JSON.stringify(signupRequest)
     });
 }
+/*
+    @GetMapping("/personalInfo")
+    public ResponseEntity<?> personalInfo(@RequestParam long userid) {
+*/

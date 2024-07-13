@@ -1,7 +1,9 @@
 .app-header {
+    font-family: Trebuchet MS;
     height: 60px;
     position: relative;
     z-index: 10;
+    
 }
 
 .app-title {
