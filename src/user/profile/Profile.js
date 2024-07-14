@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Profile.css';
+import code from '../../img/code.png';
+import link from '../../img/linkedin.png';
+import git from '../../img/git.png';
 
 class Profile extends Component {
     constructor(props) {
@@ -9,7 +12,7 @@ class Profile extends Component {
     render() {
         return (
             <div className="profile-container">
-                <div className="container">
+            
                     <div className="profile-info">
                         <div className="profile-avatar">
                             { 
@@ -27,7 +30,67 @@ class Profile extends Component {
                            <p className="profile-email">{this.props.currentUser.email}</p>
                         </div>
                     </div>
-                </div>    
+                    <div className='profile-stats'>
+                        <div className='profile-stat'>
+                            <div className='profile-stat-number'>
+                                    533
+                            </div>
+                            <div className='profile-stat-dis'>
+                                aewggew
+                            </div>
+                        </div>
+                        <div className='profile-stat'>
+                            <div className='profile-stat-number'>
+                                    32
+                            </div>
+                            <div className='profile-stat-dis'>
+                            wegagewaegwa
+                            </div>  
+                        </div>
+                        <div className='profile-stat'>
+                            <div className='profile-stat-number'>
+                                70
+                            </div>
+                            <div className='profile-stat-dis'>
+                            waegewgagwea
+                            </div>
+                        </div>
+                        <div className='profile-stat'>
+                            <div className='profile-stat-number'>
+                                123
+                            </div>
+                            <div className='profile-stat-dis'>
+                            weagwega
+                            </div>
+                        </div>
+                        <div className='profile-stat'>
+                            <div className='profile-stat-number'>
+                                100
+                            </div>
+                            <div className='profile-stat-dis'>
+                                awgeegwa
+                            </div>
+                        </div>
+                    </div>
+                    <div className="home-container-end">
+                    <div className="left-area">
+                        Kevin Kohutek
+                    </div>
+                    <div className="right-area">
+                        <a href="https://github.com/KevinKohutek04" target="_blank" rel="noopener noreferrer">
+                            <img src={git} alt='github' className='home-container-smallImage' />
+                            
+                        </a>
+                        
+                        <a href="https://github.com/KevinKohutek04/Jobber" target="_blank" rel="noopener noreferrer">
+                            <img src={code} alt="Code" className="social-icon" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/kevin-kohutek-7306a4293/" target="_blank" rel="noopener noreferrer">
+                            <img src={link} alt="LinkedIn" className="social-icon" />
+                        </a>
+                        
+                    </div>
+                </div>
             </div>
         );
     }

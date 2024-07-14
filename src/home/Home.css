@@ -18,6 +18,12 @@
     animation: hoverUpDown 1.5s infinite alternate ease-in-out;
     transition: transform 0.5s ease-in-out;
 }
+.home-container-realImage {
+    margin-top: 60px;
+    width: auto;
+    height: 200px;
+    max-width: 100%;
+}
 @keyframes hoverUpDown {
     0% {
         transform: translateY(0);
@@ -50,8 +56,34 @@
     border-radius: 10px;
     box-shadow: 10px 10px 5px gray;
     transition: background-color 0.3s ease;
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeIn 1s ease forwards;
+    animation-delay: .25s;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.home-container-realImage {
+    transition: transform 0.3s ease;
+}
+
+.home-container-disBox:hover .home-container-realImage {
+    transform: translateY(-10px);
+}
+.home-container-disBox:hover .home-container-start {
+    color: #fcfbf4;
+}
 .home-container-disBox:hover {
     background-color: #1f3a47;
 }
@@ -64,6 +96,9 @@
 .home-container-image {
     width: 30%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
 .home-container-end {
     margin-top: 50px;
@@ -81,4 +116,41 @@
     width: 1px;
     height: 80%;
     background-color: grey;
+}
+.home-container-start {
+    color: #7fa6b0;
+    transition: color 0.3s ease;
+}
+.home-container-end {
+    margin-top: 50px;
+    width: 100%;
+    height: 80px;
+    background-color: #0e222b;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+}
+
+.left-area {
+    color: #ffffff; 
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+.right-area {
+    display: flex;
+    gap: 10px; 
+}
+.right-area img {
+    pointer-events: auto;
+    height: 35px;
+    width: auto;
+    margin: 0 20px;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.right-area img:hover {
+    filter: brightness(1.5);
+    transform: translateY(-5px);
 }

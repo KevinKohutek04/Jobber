@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './Home.css';
 import drill from '../img/MD.png';
+import database from '../img/db.png';
+import wifi from '../img/ai.png';
+import code from '../img/code.png';
+import link from '../img/linkedin.png';
+import git from '../img/git.png';
 
 class Home extends Component {
     render() {
@@ -20,12 +25,12 @@ class Home extends Component {
                     </div>
                     <div className='home-container-sep'></div>
                     <div className='home-container-image'>
-                        
+                        <img src={wifi} alt='connected' className='home-container-realImage' />
                     </div>
                 </div>
                 <div className='home-container-disBox'>
                     <div className='home-container-image'>
-
+                        <img src={database} alt='connected' className='home-container-realImage' />
                     </div>
                     <div className='home-container-sep'></div>
                     <div className='home-container-words'>
@@ -36,7 +41,26 @@ class Home extends Component {
                              <span className='home-container-start'>Start Here</span>
                     </div>
                 </div>
-                <div className='home-container-end'>skbidi</div>
+                <div className="home-container-end">
+                    <div className="left-area">
+                        Kevin Kohutek
+                    </div>
+                    <div className="right-area">
+                        <a href="https://github.com/KevinKohutek04" target="_blank" rel="noopener noreferrer">
+                            <img src={git} alt='github' className='home-container-smallImage' />
+                            
+                        </a>
+                        
+                        <a href="https://github.com/KevinKohutek04/Jobber" target="_blank" rel="noopener noreferrer">
+                            <img src={code} alt="Code" className="social-icon" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/kevin-kohutek-7306a4293/" target="_blank" rel="noopener noreferrer">
+                            <img src={link} alt="LinkedIn" className="social-icon" />
+                        </a>
+                        
+                    </div>
+                </div>
+
             </div>
         )
     }

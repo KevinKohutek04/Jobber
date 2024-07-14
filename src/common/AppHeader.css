@@ -1,21 +1,39 @@
 .app-header {
-    font-family: Trebuchet MS;
+    font-family: 'Trebuchet MS', sans-serif;
     height: 60px;
     position: fixed;
     width: 100%;
     z-index: 10;
-    background-color: #fcfbf4;
+    background-color: #a6a59c;
+    
 }
 
 .app-title {
-    line-height: 60px;
+    line-height: 20px;
     vertical-align: middle;
-    font-size: 1.35em;
-    font-weight: 500;
-    color: #7fa6b0;
+    font-size: 20px; 
+    font-weight: 900;
+    color: #0e222b;
+    padding: 1px 2px;
+    border: 6px solid #0e222b;
+    border-radius: 35px;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0 5px; 
+    margin-top: 12px;
+    letter-spacing: -0.04em; 
+    transition: border-color 0.3s ease;
+    transition: color 0.3s ease;
+    box-shadow: 2px 2px 1px gray;
+    
 }
-
+.app-title:hover {
+    color: #1f3a47;
+    border-color: #1f3a47;
+}
 .app-branding {
+    margin-left: -4%;
     float: left;
 }
 
@@ -35,18 +53,31 @@
 }
 
 .app-nav ul li a {
-    display: inline-block;
-    line-height: 60px;
+    line-height: 20px;
     vertical-align: middle;
-    padding-left: 15px;
-    padding-right: 15px;
-    color: rgba(0,0,0,0.65);
+    font-size: 20px; 
+    font-weight: 900;
+    color: #0e222b;
+    padding: 1px 2px;
+    border: 6px solid #0e222b;
+    border-radius: 35px;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0 5px; 
+    margin-top: 12px;
+    letter-spacing: -0.04em; 
+    transition: border-color 0.3s ease;
+    transition: color 0.3s ease;
+    box-shadow: 2px 2px 1px gray;
 }
 
 .app-nav ul li a:hover {
-    color: #0f96f6;
+    color: #1f3a47;
+    border-color: #1f3a47;
 }
 
 .app-nav ul li a.active {
-    color: #0f96f6;
+    color: #1f3a47;
+    border-color: #1f3a47;
 }

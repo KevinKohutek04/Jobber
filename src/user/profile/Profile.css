@@ -1,9 +1,20 @@
 .profile-container {
-    padding-top: 30px;
-}
-
-.profile-info {
+    padding-top: 100px;
+    background-color: #a6a59c;
+    height: 100vh;
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.profile-info {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #0e222b;
+    padding: 2%;
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px gray;
 }
 
 .profile-info .profile-avatar img {
@@ -14,6 +25,8 @@
 .profile-info .profile-name {
     font-weight: 500;
     font-size: 18px;
+    color: #fcfbf4;
+    
 }
 
 .profile-info .profile-email {
@@ -37,7 +50,83 @@
 }
 
 .text-avatar span {
-    line-height: 200px;
-    color: #fff;
-    font-size: 3em;
+    color: #7fa6b0;
+    font-weight: 900;
+    font-size: 26px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.profile-stat {
+    width: 17%;
+    height: 350px;
+    margin: 20px; 
+    background-color: #0e222b; 
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px gray;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.profile-stat:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+.profile-stat:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.profile-stat:nth-child(3) {
+    animation-delay: 0.75s;
+}
+
+.profile-stat:nth-child(4) {
+    animation-delay: 1s;
+}
+
+.profile-stat:nth-child(5) {
+    animation-delay: 1.25s;
+}
+
+.profile-stat-number {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: #fcfbf4;
+    font-size: 64px;
+    margin-top: 20px;
+    background-color: #40545d;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-stat-dis {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fcfbf4;
+    margin: 20px;
 }
