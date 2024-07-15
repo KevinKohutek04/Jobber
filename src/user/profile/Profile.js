@@ -36,7 +36,10 @@ class Profile extends Component {
                                     533
                             </div>
                             <div className='profile-stat-dis'>
-                                aewggew
+                            Click Off Rate
+                            </div>
+                            <div className='profile-stat-mini'>
+                            How many times you tab away from the tab.
                             </div>
                         </div>
                         <div className='profile-stat'>
@@ -44,7 +47,10 @@ class Profile extends Component {
                                     32
                             </div>
                             <div className='profile-stat-dis'>
-                            wegagewaegwa
+                            Average Win Rate
+                            </div>
+                            <div className='profile-stat-mini'>
+                            This is how likely it is that you will pass your next inverview.
                             </div>  
                         </div>
                         <div className='profile-stat'>
@@ -52,7 +58,10 @@ class Profile extends Component {
                                 70
                             </div>
                             <div className='profile-stat-dis'>
-                            waegewgagwea
+                            Average Score
+                            </div>
+                            <div className='profile-stat-mini'>
+                            This is how many question you get right per interview.
                             </div>
                         </div>
                         <div className='profile-stat'>
@@ -60,7 +69,10 @@ class Profile extends Component {
                                 123
                             </div>
                             <div className='profile-stat-dis'>
-                            weagwega
+                            Average Time Till Completion
+                            </div>
+                            <div className='profile-stat-mini'>
+                            How many seconds it take for you to complete a interview.
                             </div>
                         </div>
                         <div className='profile-stat'>
@@ -68,7 +80,10 @@ class Profile extends Component {
                                 100
                             </div>
                             <div className='profile-stat-dis'>
-                                awgeegwa
+                            Overall Wins
+                            </div>
+                            <div className='profile-stat-mini'>
+                            How many total you have.
                             </div>
                         </div>
                     </div>

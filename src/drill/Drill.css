@@ -1,4 +1,134 @@
 .Drill-main {
+    padding-top: 100px;
+    font-family: 'Trebuchet MS', sans-serif;
     height: auto;
     width: 100%;
+    background-color: #a6a59c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Drill-options {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: auto;
+}
+
+.Drill-spacer {
+    width: 80%;
+    height: 2px;
+    background-color: grey;
+}
+
+.Drill-subText {
+    margin-bottom: 50px;
+    color: #40545d;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.Drill-title {
+    text-align: left;
+    width: 52%;
+    margin: 10px;
+    color: #0e222b;
+    font-weight: 900;
+    font-size: 55px;
+}
+
+.Drill-code {
+    margin: 20px;
+    width: 340px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: #1f3a47;
+    box-shadow: 10px 10px 5px gray;
+    transition: background-color 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Drill-code:hover {
+    background-color: #40545d;
+}
+
+.Drill-code-top {
+    width: 100%;
+    height: 200px;
+    position: relative; 
+    display: flex;
+    flex-direction: row;
+}
+
+.Drill-code-bottom {
+    width: 100%;
+    height: 200px;
+}
+
+.Drill-code-img {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.Drill-code-title {
+    top: 20px; 
+    right: 20px; 
+    width: 125px;
+    height: auto; 
+    margin-top: 20px;
+    color: #fcfbf4;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.Drill-code-minitext {
+    color: #fcfbf4;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.Drill-code-right {
+    margin-left: 150px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-top: 1px solid grey;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+li .Drill-code-listtext {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    color: #fcfbf4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+li:hover .Drill-code-listtext {
+    transform: scale(1.05);
+    font-size: 20px;
 }

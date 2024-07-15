@@ -1,8 +1,184 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { getOffline, setAPIkey, questionChat, addClosed, personalInfo } from "../util/APIUtils";
+import java from '../img/java.png';
+import c from '../img/c.png';
+import js from '../img/js.png';
+import python from '../img/python.png';
+import sql from '../img/sql.png';
+
 import './Drill.css';
 
+class Drill extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            exampleState: 'Hello, World!'
+        };
+    }
+
+
+    render() {
+        return (<div className="Drill-main">
+            <div className="Drill-title">Offline interviews</div>
+            <div className="Drill-subText">All offline interviews are pre-made questions that are pulled randomly in a large set.</div>
+            <div className="Drill-spacer"></div>
+            <div className="Drill-options">
+                <div className="Drill-code">
+                    <div className="Drill-code-top">
+                        <img src={java} alt='JAVA' className="Drill-code-img"/>
+                        <div className="Drill-code-right">
+                            <span className="Drill-code-title">JAVA</span>
+                            <span className="Drill-code-minitext">a classic object-oriented programming language.</span>
+                        </div>
+                    </div>
+                    <div className="Drill-code-bottom">
+                        <ul>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 1 }}}>
+                                    <span className="Drill-code-listtext">Entry - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 2 }}}>
+                                    <span className="Drill-code-listtext">Junior - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 3 }}}>
+                                    <span className="Drill-code-listtext">Senior - Level</span>
+                                </Link>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+        
+                <div className="Drill-code">
+                    <div className="Drill-code-top">
+                        <img src={c} alt='c' className="Drill-code-img"/>
+                        <div className="Drill-code-right">
+                            <span className="Drill-code-title">C#</span>
+                            <span className="Drill-code-minitext">Versatile, object-oriented language for modern applications.</span>
+                        </div>
+                    </div>
+                    <div className="Drill-code-bottom">
+                        <ul>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 4 }}}>
+                                    <span className="Drill-code-listtext">Entry - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 5 }}}>
+                                    <span className="Drill-code-listtext">Junior - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 6 }}}>
+                                    <span className="Drill-code-listtext">Senior - Level</span>
+                                </Link>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+        
+                <div className="Drill-code">
+                    <div className="Drill-code-top">
+                        <img src={js} alt='js' className="Drill-code-img"/>
+                        <div className="Drill-code-right">
+                            <span className="Drill-code-title">JS</span>
+                            <span className="Drill-code-minitext">Dynamic, versatile language for web development.</span>
+                        </div>
+                    </div>
+                    <div className="Drill-code-bottom">
+                        <ul>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 7 }}}>
+                                    <span className="Drill-code-listtext">Entry - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 8 }}}>
+                                    <span className="Drill-code-listtext">Junior - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 9 }}}>
+                                    <span className="Drill-code-listtext">Senior - Level</span>
+                                </Link>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+        
+                <div className="Drill-code">
+                    <div className="Drill-code-top">
+                        <img src={python} alt='python' className="Drill-code-img"/>
+                        <div className="Drill-code-right">
+                            <span className="Drill-code-title">PYTHON</span>
+                            <span className="Drill-code-minitext">Simple, powerful language for diverse applications.</span>
+                        </div>
+                    </div>
+                    <div className="Drill-code-bottom">
+                        <ul>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 10 }}}>
+                                    <span className="Drill-code-listtext">Entry - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 11 }}}>
+                                    <span className="Drill-code-listtext">Junior - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 12 }}}>
+                                    <span className="Drill-code-listtext">Senior - Level</span>
+                                </Link>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+            <div className="Drill-options">    
+                <div className="Drill-code">
+                    <div className="Drill-code-top">
+                        <img src={sql} alt='sql' className="Drill-code-img"/>
+                        <div className="Drill-code-right">
+                            <span className="Drill-code-title">MYSQL</span>
+                            <span className="Drill-code-minitext">Structured language for querying relational databases.</span>
+                        </div>
+                    </div>
+                    <div className="Drill-code-bottom">
+                        <ul>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 13 }}}>
+                                    <span className="Drill-code-listtext">Entry - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 14 }}}>
+                                    <span className="Drill-code-listtext">Advanced - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 15 }}}>
+                                    <span className="Drill-code-listtext"></span>
+                                </Link>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        );
+    }
+}
+
+
+export default Drill;
+/*
 class Drill extends Component {
     constructor(props) {
         super(props);
@@ -88,9 +264,4 @@ class Drill extends Component {
             </div>
         );
     }
-}
-
-
-export default Drill;
-//@GetMapping("/personalInfo")
-//public ResponseEntity<?> personalInfo(@RequestParam long userid) {
+*/

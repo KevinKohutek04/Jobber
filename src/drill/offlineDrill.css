@@ -1,0 +1,26 @@
+.offlineDrill-main {
+    padding: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: #a6a59c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+.offlineDrill-spacer {
+    height: 15%;
+}
+.offlineDrill-cards {
+    height: 70%;
+    width: 60%;
+    background-color: aliceblue;
+}
+.offlineDrill-stats {
+    margin-top: 20px;
+    width: 100%;
+    height: 8%;
+    bottom: 0;
+    position: absolute;
+}

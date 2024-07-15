@@ -5,3 +5,6 @@
 .s-alert-close::before, .s-alert-close::after {
     width: 2px;
 }
+html, body {
+    overflow-x: hidden;
+}
