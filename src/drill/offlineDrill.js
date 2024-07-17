@@ -32,11 +32,15 @@ class OfflineDrill extends Component {
 
                 </div>
                 <div className='offlineDrill-stats'>
-                    
-                  
                 
-                </div>{//i take uo the bottom of the screen and do nothing
-                }
+                <div className='offlineDrill-cards-right-right'>
+                        
+                        </div>
+                        <div className='offlineDrill-cards-right-left'>
+
+                        </div>
+                
+                </div>  {/*i take uo the bottom of the screen and do nothing*/}
             </div>
         );
     }
