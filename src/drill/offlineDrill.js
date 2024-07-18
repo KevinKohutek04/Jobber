@@ -34,7 +34,7 @@ class OfflineDrill extends Component {
                 <div className='offlineDrill-stats'>
                 
                 <div className='offlineDrill-cards-right-right'>
-                        
+                        <button className='button-56'>skbbidi</button>
                         </div>
                         <div className='offlineDrill-cards-right-left'>
 
