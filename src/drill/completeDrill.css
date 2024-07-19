@@ -1,0 +1,160 @@
+.completeDrill-main {
+    width: 100%;
+    height: 100vh;
+    background-color: #a6a59c;
+    padding: 80px;
+    display: flex;
+    font-family: 'Trebuchet MS', sans-serif;
+    flex-direction: column;
+    align-items: center;
+}
+.completeDrill-main-title {
+    transform: translateX(-15px);
+    font-family: inherit;
+    text-align: left;
+    width: 52%;
+    margin: 10px;
+    color: #0e222b;
+    font-weight: 900;
+    font-size: 55px;
+}
+
+.completeDrill-main-subtext {
+    margin-bottom: 50px;
+    text-align: left;
+    color: #40545d;
+    font-weight: 500;
+    font-size: 26px;
+    font-family: inherit;
+}
+.completeDrill-main-text {
+    height: 180px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.completeDrill-info {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.completeDrill-infoBox:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.completeDrill-infoBox:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.completeDrill-infoBox:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.completeDrill-infoBox:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.completeDrill-infoBox {
+    width: 350px;
+    height: 350px;
+    margin: 40px;
+    background-color: #0e222b;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px gray;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    transition: background-color .5s ease;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.completeDrill-infoBox:hover {
+    background-color: #1f3a47;
+}
+
+.completeDrill-infoBox-number {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: #fcfbf4;
+    font-size: 64px;
+    margin-top: 20px;
+    background-color: #40545d;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.completeDrill-infoBox-dis {
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fcfbf4;
+    margin: 20px;
+}
+
+.completeDrill-infoBox-mini {
+    text-align: center;
+    margin: 20px;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #d0d0d0;
+    position: absolute;
+    bottom: 20px;
+}
+
+.completeDrill-infoBox:hover .completeDrill-infoBox-mini {
+    opacity: 1;
+}
+
+.unique-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #0e222b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.unique-footer .left-area {
+    color: #ffffff;
+}
+
+.unique-footer .right-area {
+    display: flex;
+    gap: 20px;
+}
+
+.unique-footer .right-area a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.unique-footer .right-area img {
+    pointer-events: auto;
+    height: 35px;
+    width: auto;
+    margin: 0 20px;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+.unique-footer .right-area img:hover {
+    filter: brightness(1.5);
+    transform: translateY(-5px);
+}

@@ -21,6 +21,7 @@ import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import './App.css';
 import offlineDrill from '../drill/offlineDrill';
 import onlineDrill from '../drill/onlineDrill';
+import completeDrill from '../drill/completeDrill';
 
 class App extends Component {
   constructor(props) {
@@ -82,6 +83,10 @@ class App extends Component {
                 component={drill}></PrivateRoute>
                 <PrivateRoute path="/offlineDrill" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
                 component={offlineDrill}></PrivateRoute>
+
+                <PrivateRoute path="/completeDrill" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+                component={completeDrill}></PrivateRoute>
+
                 <PrivateRoute path="/onlineDrill" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
                 component={onlineDrill}></PrivateRoute>
             <Route path="/login"

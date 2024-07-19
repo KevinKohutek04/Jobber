@@ -43,7 +43,7 @@
     width: 340px;
     height: 350px;
     border-radius: 10px;
-    background-color: #1f3a47;
+    background-color: #0e222b;
     box-shadow: 10px 10px 5px gray;
     transition: background-color 0.5s ease;
     display: flex;
@@ -52,7 +52,7 @@
 }
 
 .Drill-code:hover {
-    background-color: #40545d;
+    background-color: #1f3a47;
 }
 
 .Drill-code-top {

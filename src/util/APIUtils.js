@@ -107,7 +107,6 @@ export function personalInfo( userid ) {
         url: url, 
         method: 'GET'
     }).then(response => {
-        console.log( response );
         return response;
     }).catch(error => {
         console.error(error);

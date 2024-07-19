@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { personalInfo } from "../../util/APIUtils";
 import './Profile.css';
 import code from '../../img/code.png';
 import link from '../../img/linkedin.png';
@@ -7,8 +8,34 @@ import git from '../../img/git.png';
 class Profile extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
+        this.state = {
+            clickOff: 0,
+            winRate: 0,
+            adScore: 0,
+            adTime: 0,
+            wins: 0
+        };
+        this.handlePersonalInfo = this.handlePersonalInfo.bind(this);
     }
+    componentDidMount() {
+        this.handlePersonalInfo();
+    }
+    handlePersonalInfo() {
+        personalInfo(this.props.currentUser.id).then(response => {
+            console.log(response);
+            const values = response.message.split('.');
+            this.setState({
+                clickOff: parseInt(values[0]),
+                winRate: parseInt(values[1]),
+                adScore: parseInt(values[2]),
+                adTime: parseInt(values[3]),
+                wins: parseInt(values[4])
+            });
+        }).catch(error => {
+            console.error(error);
+        });
+    }
+
     render() {
         return (
             <div className="profile-container">
@@ -33,7 +60,7 @@ class Profile extends Component {
                     <div className='profile-stats'>
                         <div className='profile-stat'>
                             <div className='profile-stat-number'>
-                                    533
+                                    {this.state.clickOff}
                             </div>
                             <div className='profile-stat-dis'>
                             Click Off Rate
@@ -44,7 +71,7 @@ class Profile extends Component {
                         </div>
                         <div className='profile-stat'>
                             <div className='profile-stat-number'>
-                                    32
+                                    {this.state.winRate}
                             </div>
                             <div className='profile-stat-dis'>
                             Average Win Rate
@@ -55,7 +82,7 @@ class Profile extends Component {
                         </div>
                         <div className='profile-stat'>
                             <div className='profile-stat-number'>
-                                70
+                                {this.state.adScore}
                             </div>
                             <div className='profile-stat-dis'>
                             Average Score
@@ -66,7 +93,7 @@ class Profile extends Component {
                         </div>
                         <div className='profile-stat'>
                             <div className='profile-stat-number'>
-                                123
+                                {this.state.adTime}
                             </div>
                             <div className='profile-stat-dis'>
                             Average Time Till Completion
@@ -77,7 +104,7 @@ class Profile extends Component {
                         </div>
                         <div className='profile-stat'>
                             <div className='profile-stat-number'>
-                                100
+                                {this.state.wins}
                             </div>
                             <div className='profile-stat-dis'>
                             Overall Wins
