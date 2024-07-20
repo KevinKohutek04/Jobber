@@ -175,8 +175,6 @@ class Drill extends Component {
         );
     }
 }
-
-
 export default Drill;
 /*
 class Drill extends Component {
