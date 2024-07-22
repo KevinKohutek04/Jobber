@@ -8,7 +8,7 @@ import arrowL from '../img/arrowL.png';
 import arrowR from '../img/arrowR.png';
 import clock from '../img/clock.png';
 
-class onlineDrill extends Component { //  questionChat(prompt, userid) {
+class hasApi extends Component { //  questionChat(prompt, userid) {
     constructor(props) {
         super(props);
         this.state = {

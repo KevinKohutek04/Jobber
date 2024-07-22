@@ -49,6 +49,24 @@ export function getOffline(type) {
         return Promise.reject(error);
     });
 }
+export function hasApikey(userid) {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
+    const url = `${API_BASE_URL}/hasApikey?userid=${userid}`;
+
+    return request({
+        url: url, 
+        method: 'GET'
+    }).then(response => {
+                    console.log(response);
+
+        return response;
+    }).catch(error => {
+        console.error(error);
+        return Promise.reject(error);
+    });
+}
 export function setAPIkey(userid, api) {
     if (!localStorage.getItem(ACCESS_TOKEN)) {
         return Promise.reject("No access token set.");

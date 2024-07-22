@@ -89,6 +89,9 @@ class App extends Component {
 
                 <PrivateRoute path="/onlineDrill" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
                 component={onlineDrill}></PrivateRoute>
+
+                <PrivateRoute path="/onlineDrill" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+                component={onlineDrill}></PrivateRoute>
             <Route path="/login"
               render={(props) => <Login authenticated={this.state.authenticated} {...props} />}></Route>
             <Route path="/signup"
