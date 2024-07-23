@@ -1,0 +1,206 @@
+.hasApi-main {
+    width: 100%;
+    height: 100vh;
+    background-color: #a6a59c;
+    padding: 80px;
+    display: flex;
+    font-family: 'Trebuchet MS', sans-serif;
+    flex-direction: column;
+    align-items: center;
+}
+.hasApi-main-text {
+    height: 180px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.hasApi-main-title {
+    transform: translateX(-15px);
+    font-family: inherit;
+    text-align: left;
+    width: 52%;
+    margin: 10px;
+    color: #0e222b;
+    font-weight: 900;
+    font-size: 55px;
+}
+
+.hasApi-main-subtext {
+    margin-bottom: 50px;
+    text-align: left;
+    color: #40545d;
+    font-weight: 500;
+    font-size: 26px;
+    font-family: inherit;
+}
+.hasApi-spacer {
+    margin-top: 20px;
+    width: 80%;
+    height: 2px;
+    background-color: grey;
+}
+.hasApi-input {
+    margin: 20px;
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #0e222b;
+    box-shadow: 10px 10px 5px gray;
+    transition: background-color 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.hasApi-input-title {
+    font-family: inherit;
+    margin: 40px 0 10px 40px;
+    text-align: left;
+    color: #fcfbf4;
+    font-weight: 500;
+    font-size: 42px;
+}
+.hasApi-input-subtext {
+    margin: 0 40px 10px 40px;
+    color: #fcfbf4;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.hasApi-input-input {
+    margin: 40px 40px 30px 40px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.hasApi-input-container {
+    width: 55%;
+    position: relative;
+    margin-top: 20px;
+}
+input[type="text"] {
+    width: 400px;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+}
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 26px;
+    color: #ccc;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+input[type="text"]:focus + label,
+input[type="text"]:not(:placeholder-shown) + label {
+    top: -20px;
+    left: 0;
+    font-size: 14px;
+    color: #fff;
+}
+input[type="text"]:focus {
+    border-bottom: 1px solid #fff;
+}
+.btnn {  
+    font-family: Arial, Helvetica, sans-serif;  
+    text-transform: uppercase;
+  }
+  
+  .btnn:hover .btnn-slide-show-text1 {  
+    margin-left: 5px;
+  }
+  
+  .btnn-layered-3d > ::before {  
+    box-sizing: border-box;
+  }
+  
+  .btnn-layered-3d {  
+    font-family: Trebuchet MS;
+    color: #fcfbf4;
+    font-weight: 500;
+    font-size: 20px;
+    height: 60px;
+    width: 120px;
+    position: relative;  
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;  
+    outline: none;  
+    border: 0px;  
+    vertical-align: middle;  
+    text-decoration: none;  
+    text-transform: uppercase;  
+    padding: 1.15em 2em;  
+    border-radius: 0.75em;  
+    transform-style: preserve-3d;  
+    transition: transform 0.15s ease-out 0s, background 0.15s ease-out 0s;
+    text-align: center;
+  }
+  
+  .btnn-layered-3d::before {  
+    position: absolute;  
+    content: "";  
+    width: 100%;  
+    height: 100%;  
+    inset: 0px;  
+    border-radius: inherit;  
+    transform: translate3d(0px, 0.75em, -1em);  
+    transition: transform 0.15s ease-out 0s, box-shadow 0.15s ease-out 0s;
+  }
+  
+  .btnn-layered-3d:hover {  
+    transform: translateY(0.25em);
+  }
+  
+  .btnn-layered-3d:hover::before {  
+    transform: translate3d(0px, 0.5em, -1em);
+  }
+  
+  .btnn-layered-3d--pink {  
+    color: #fcfbf4;  
+    background: rgb(17, 152, 102);  
+    border: 2px solid rgb(17, 152, 102);
+  }
+  
+  .btnn-layered-3d--pink::before {  
+    background: rgb(17, 102, 92);  
+  }
+  
+  .btnn-layered-3d--pinkk {  
+    color: #fcfbf4;  
+    background: rgb(255, 105, 97);  
+    border: 2px solid rgb(255, 105, 97);
+  }
+  
+  .btnn-layered-3d--pinkk::before {  
+    background: rgb(200, 60, 75);  
+  }
+
+.hasApi-input-img {
+  width: auto;
+  height: 100px;
+}
+/*color: #40545d;
+    font-weight: 500;
+    font-size: 32px;
+}
+.home-container-text {
+    color: #fcfbf4;
+    font-weight: 400;
+    font-size: 22px;
+<span className="hasApi-input-title">Your keys are safe</span>   
+            <span className="hasApi-input-subtext">Keys are run through three layers of encryption to ensure safe practices on the internet. 
+                They are also stored on a local server where they remain encrypted.</span>
+            <form className='hasApi-input-input'>
+                <input type="text" name="apiKey" required />
+                <button type='submit' className='hasApi-input-input-button'>Submit</button>
+            </form>
+            <span className="hasApi-input-subtext">Looks like you dont have a API key.</span> */

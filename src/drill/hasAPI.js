@@ -1,120 +1,49 @@
 import React, { Component } from 'react';
-import { questionChat, addClosed, hasApikey } from '../util/APIUtils';
 import { Link, Redirect } from 'react-router-dom';
-import './onlineDrill.css';
-import thumpup from '../img/rightThumb.png';
-import thumbdown from '../img/downThumbs.png';
-import arrowL from '../img/arrowL.png';
-import arrowR from '../img/arrowR.png';
-import clock from '../img/clock.png';
+import './hasApi.css';
+import lock from '../img/lock.png';
 
-class hasApi extends Component { //  questionChat(prompt, userid) {
+class hasApi extends Component {
     constructor(props) {
         super(props);
         this.state = {
             type: props.location.state ? props.location.state.type : null,
-            currentQ: "Click one of the buttons to start your interview.",
-            currentA: "Not Yet.",
-            correctQ: 0,
-            lookAway: 0,
-            displayQ: true,
-            totalTime: 0,
-            totalQ: 0,
-            isRunning: false,
-            redirectToHome: false,
-            animate: false,
-            correctAnimate: false,
-            incorrectAnimate: false
-        };
-        this.handleDivClick = this.handleDivClick.bind(this);
-        this.handleOnline = this.handleOnline.bind(this);
-        this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
-        this.startTimer = this.startTimer.bind(this);
-        this.stopTimer = this.stopTimer.bind(this);
-        this.resetTimer = this.resetTimer.bind(this);
-        this.closeQuiz = this.closeQuiz.bind(this);
-    }
-    componentDidMount() {
-        document.addEventListener('visibilitychange', this.handleVisibilityChange);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('visibilitychange', this.handleVisibilityChange);
-        this.stopTimer();
-    }
-
-    /*handleOnline(type) {
-            getOffline(type)
-            .then(response => {
-                if(this.state.isRunning == false) {
-                    this.startTimer();
-                }
-                const message = response.message;
-                const parts = message.split(/\?(.+)/);
-                let currentA = parts[1] ? parts[1].trim() : "No answer provided.";
-                if (currentA.length > 0) {
-                    currentA = currentA.substring(1);
-                }
-                this.setState({ 
-                    currentQ: parts[0] + '?', 
-                    currentA: currentA
-                });
-                if(this.state.totalQ === 10) {
-                    this.closeQuiz();
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching offline data:", error);
-            });
-        
-    }*/
-    handleVisibilityChange() {
-        if (document.hidden) {
-            this.setState(prevState => ({
-                lookAway: prevState.lookAway + 1
-            }));
-        }
-    }
-
-    handleDivClick() {
-        this.setState(prevState => ({
-            displayQ: !prevState.displayQ,
-            animate: true
-        }));
-        setTimeout(() => {
-            this.setState({ animate: false });
-        }, 250);
-    }
-    startTimer() {
-        if (!this.state.isRunning) {
-            this.timer = setInterval(() => {
-                this.setState(prevState => ({
-                    totalTime: prevState.totalTime + 1
-                }));
-            }, 1000);
-            this.setState({ isRunning: true });
-        }
-    }
-
-    stopTimer() {
-        clearInterval(this.timer);
-        this.setState({ isRunning: false });
-    }
-
-    resetTimer() {//im useless
-        this.stopTimer();
-        this.setState({ totalTime: 0 });
-    }
-
-    closeQuiz() {
-        this.stopTimer();
-        addClosed(this.state.correctQ, this.state.totalTime , this.state.lookAway, this.props.currentUser.id);
-
-
-        this.setState({ redirectToHome: true });
+        };   
     }
     render() {
-        if (this.state.redirectToHome) {
+        
+
+        return ( 
+        <div className="hasApi-main">
+            <div className="hasApi-main-text">
+                <span className="hasApi-main-title">Looks like you dont have a API key.</span>   
+                <span className="hasApi-main-subtext">To use the AI chat feature you must have a valid open api key.</span>
+            </div>
+            <div className="hasApi-spacer"></div>
+            <div className='hasApi-input'>
+            <span className="hasApi-input-title">Your keys are safe.</span>   
+            <span className="hasApi-input-subtext">Keys are run through three layers of encryption to ensure safe practices on the internet. 
+                They are also stored on a local server where they remain encrypted.</span>
+            <form className='hasApi-input-input'>
+                
+             <div className="hasApi-input-container">
+                <input type="text" id="name" name="name" required />
+                <label htmlFor="name">Key</label>
+            </div>
+                <button type='submit' className='btnn btnn-layered-3d btnn-layered-3d--pink'>Submit</button>
+            </form>
+            
+        </div>
+
+        </div>
+
+        );
+    }
+}
+
+export default hasApi;
+/**<img src={lock} alt='Lock' className="hasApi-input-img"/>
+ * if (this.state.redirectToHome) {
             return (
                 <Redirect to={{
                     pathname: "/completeDrill",
@@ -126,69 +55,4 @@ class hasApi extends Component { //  questionChat(prompt, userid) {
                     }
                 }} />
             );
-        }
-
-        return (
-            <div className="offlineDrill-main">
-                <div className='offlineDrill-spacer'></div>
-                <div className='offlineDrill-cards'>
-                    <div className='offlineDrill-cards-left'></div>
-                    <div className={`offlineDrill-cards-middle unselectable ${this.state.animate ? 'animated' : ''} ${this.state.correctAnimate ? 'animatedv2' : ''} ${this.state.incorrectAnimate ? 'animatedv3' : ''}`} onClick={this.handleDivClick}>
-                         <span className='offlineDrill-cards-middle-title'>{this.state.displayQ ? this.state.currentQ : this.state.currentA}</span>
-                    </div>
-                    <div className='offlineDrill-cards-right'></div>
-
-                </div>
-                <div className='offlineDrill-stats'>
-                    <div className='offlineDrill-cards-right-right'>
-                    <button 
-                            className="btn btn-layered-3d btn-layered-3d--pinkk" 
-                            onClick={() => {
-                                this.handleOffline(this.state.type);
-                                this.setState(
-                                    (prevState) => ({
-                                        totalQ: prevState.totalQ + 1,
-                                        displayQ: !prevState.displayQ,
-                                        incorrectAnimate: true
-                                    }),
-                                    () => {
-                                        setTimeout(() => {
-                                            this.setState({ incorrectAnimate: false });
-                                        }, 500); 
-                                    }
-                                );
-                            }}
-                        >
-                        incorrect
-                    </button>
-                    </div>
-                    <div className='offlineDrill-cards-right-left'>
-                    <button 
-                        className="btn btn-layered-3d btn-layered-3d--pink" 
-                        onClick={() => {
-                            this.handleOffline(this.state.type);
-                            this.setState(
-                              (prevState) => ({
-                                correctQ: prevState.correctQ + 1,
-                                totalQ: prevState.totalQ + 1,
-                                displayQ: !prevState.displayQ,
-                                correctAnimate: true
-                              }),
-                              () => {
-                                setTimeout(() => {
-                                  this.setState({ correctAnimate: false });
-                                }, 500);
-                              }
-                            );
-                        }}
-                    >
-                        Correct
-                    </button>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-
-export default onlineDrill;
+        } */

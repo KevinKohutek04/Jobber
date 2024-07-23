@@ -93,7 +93,7 @@ class Profile extends Component {
                         </div>
                         <div className='profile-stat'>
                             <div className='profile-stat-number'>
-                                {this.state.adTime}
+                                {this.state.adTime}s
                             </div>
                             <div className='profile-stat-dis'>
                             Average Time Till Completion

@@ -22,6 +22,7 @@ import './App.css';
 import offlineDrill from '../drill/offlineDrill';
 import onlineDrill from '../drill/onlineDrill';
 import completeDrill from '../drill/completeDrill';
+import hasApi from '../drill/hasAPI';
 
 class App extends Component {
   constructor(props) {
@@ -86,6 +87,8 @@ class App extends Component {
 
                 <PrivateRoute path="/completeDrill" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
                 component={completeDrill}></PrivateRoute>
+                <PrivateRoute path="/hasApi" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
+                component={hasApi}></PrivateRoute>
 
                 <PrivateRoute path="/onlineDrill" authenticated={this.state.authenticated} currentUser={this.state.currentUser}
                 component={onlineDrill}></PrivateRoute>
