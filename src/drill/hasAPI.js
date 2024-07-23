@@ -11,8 +11,6 @@ class hasApi extends Component {
         };   
     }
     render() {
-        
-
         return ( 
         <div className="hasApi-main">
             <div className="hasApi-main-text">
