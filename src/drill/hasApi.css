@@ -9,7 +9,7 @@
     align-items: center;
 }
 .hasApi-main-text {
-    height: 180px;
+    height: 12em;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,6 @@
 }
 
 .hasApi-main-subtext {
-    margin-bottom: 50px;
     text-align: left;
     color: #40545d;
     font-weight: 500;
@@ -34,7 +33,8 @@
     font-family: inherit;
 }
 .hasApi-spacer {
-    margin-top: 20px;
+    margin: 2em;
+    margin-top: 4em;
     width: 80%;
     height: 2px;
     background-color: grey;
@@ -189,6 +189,29 @@ input[type="text"]:focus {
 .hasApi-input-img {
   width: auto;
   height: 100px;
+}
+@media (max-width: 1330px) {
+  .hasApi-main {
+    padding: 0px;
+    padding-top: 40px;
+    width: 100%;
+    height: 100vh;
+  }
+  .hasApi-main-text {
+      width: 90%;
+  }
+  .hasApi-main-title {
+    width: 90%;
+  }
+  .hasApi-spacer {
+    opacity: 0;
+  }
+  .hasApi-input {
+    width: 100%;
+  }
+  .hasApi-input-input {
+    flex-direction: column;
+  }
 }
 /*color: #40545d;
     font-weight: 500;

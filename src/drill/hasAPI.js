@@ -41,16 +41,24 @@ class hasApi extends Component {
 
 export default hasApi;
 /**<img src={lock} alt='Lock' className="hasApi-input-img"/>
- * if (this.state.redirectToHome) {
-            return (
-                <Redirect to={{
-                    pathname: "/completeDrill",
-                    state: {
-                        from: this.props.location,
-                        correctQ: this.state.correctQ,
-                        totalTime: this.state.totalTime,
-                        lookAway: this.state.lookAway
-                    }
-                }} />
-            );
-        } */
+ * <button 
+                        className="btn btn-layered-3d btn-layered-3d--pink" 
+                        onClick={() => {
+                            this.handleOffline(this.state.type);
+                            this.setState(
+                              (prevState) => ({
+                                correctQ: prevState.correctQ + 1,
+                                totalQ: prevState.totalQ + 1,
+                                displayQ: !prevState.displayQ,
+                                correctAnimate: true
+                              }),
+                              () => {
+                                setTimeout(() => {
+                                  this.setState({ correctAnimate: false });
+                                }, 500);
+                              }
+                            );
+                        }}
+                    >
+                        Correct
+                    </button>*/
