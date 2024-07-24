@@ -77,6 +77,7 @@ export function setAPIkey(userid, api) {
         url: url, 
         method: 'POST'
     }).then(response => {
+        console.log(response);
         return response;
     }).catch(error => {
         console.error(error);

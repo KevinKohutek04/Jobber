@@ -1,14 +1,37 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import './hasApi.css';
+import { setAPIkey } from '../util/APIUtils';
 import lock from '../img/lock.png';
+import Alert from 'react-s-alert';
 
 class hasApi extends Component {
     constructor(props) {
         super(props);
         this.state = {
             type: props.location.state ? props.location.state.type : null,
+            apiKey: "",
+            redirectToHome: false
         };   
+    }
+
+
+    handleApiKey (api) {
+        setAPIkey(this.props.currentUser.id, api)
+        .then(response => {
+            if (response.message === "yes") {
+                Alert.info("success")
+            }
+            this.setState({ 
+                
+            });
+            if(this.state.totalQ === 10) {
+                this.closeQuiz();
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching offline data:", error);
+        });
     }
     render() {
         return ( 
@@ -28,7 +51,22 @@ class hasApi extends Component {
                 <input type="text" id="name" name="name" required />
                 <label htmlFor="name">Key</label>
             </div>
-                <button type='submit' className='btnn btnn-layered-3d btnn-layered-3d--pink'>Submit</button>
+                <button type='submit' className='btnn btnn-layered-3d btnn-layered-3d--pink'
+                 onClick={() => {
+                                this.handleOffline(this.state.type);
+                                this.setState(
+                                    (prevState) => ({
+                                        totalQ: prevState.totalQ + 1,
+                                        displayQ: !prevState.displayQ,
+                                        incorrectAnimate: true
+                                    }),
+                                    () => {
+                                        setTimeout(() => {
+                                            this.setState({ incorrectAnimate: false });
+                                        }, 500); 
+                                    }
+                                );
+                            }}>Submit</button>
             </form>
             
         </div>
@@ -38,27 +76,7 @@ class hasApi extends Component {
         );
     }
 }
-
 export default hasApi;
-/**<img src={lock} alt='Lock' className="hasApi-input-img"/>
- * <button 
-                        className="btn btn-layered-3d btn-layered-3d--pink" 
-                        onClick={() => {
-                            this.handleOffline(this.state.type);
-                            this.setState(
-                              (prevState) => ({
-                                correctQ: prevState.correctQ + 1,
-                                totalQ: prevState.totalQ + 1,
-                                displayQ: !prevState.displayQ,
-                                correctAnimate: true
-                              }),
-                              () => {
-                                setTimeout(() => {
-                                  this.setState({ correctAnimate: false });
-                                }, 500);
-                              }
-                            );
-                        }}
-                    >
-                        Correct
-                    </button>*/
+/*
+export function setAPIkey(userid, api) {
+*/
