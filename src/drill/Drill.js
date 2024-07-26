@@ -6,6 +6,7 @@ import c from '../img/c.png';
 import js from '../img/js.png';
 import python from '../img/python.png';
 import sql from '../img/sql.png';
+import triangle from '../img/triangle.png';
 
 import './Drill.css';
 
@@ -162,10 +163,39 @@ class Drill extends Component {
                                 </Link>
                             </li>
                             <li>
-                                <Link to={{pathname: "/offlineDrill", state: { type: 15 }}}>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 14 }}}>
                                     <span className="Drill-code-listtext"></span>
                                 </Link>
                             </li>
+                        </ul>    
+                    </div>
+                </div>
+                <div className="Drill-code">
+                    <div className="Drill-code-top">
+                        <img src={triangle} alt='sql' className="Drill-code-img"/>
+                        <div className="Drill-code-right">
+                            <span className="Drill-code-title">SailPoint</span>
+                            <span className="Drill-code-minitext">IAM secruity software.</span>
+                        </div>
+                    </div>
+                    <div className="Drill-code-bottom">
+                        <ul>
+                        <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 15 }}}>
+                                    <span className="Drill-code-listtext">Entry - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 16 }}}>
+                                    <span className="Drill-code-listtext">Advanced - Level</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={{pathname: "/offlineDrill", state: { type: 16 }}}>
+                                    <span className="Drill-code-listtext"></span>
+                                </Link>
+                            </li>
+                            
                         </ul>    
                     </div>
                 </div>
