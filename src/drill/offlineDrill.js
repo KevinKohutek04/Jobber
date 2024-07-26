@@ -148,7 +148,7 @@ class OfflineDrill extends Component {
                                 this.setState(
                                     (prevState) => ({
                                         totalQ: prevState.totalQ + 1,
-                                        displayQ: !prevState.displayQ,
+                                        displayQ: true,
                                         incorrectAnimate: true
                                     }),
                                     () => {
@@ -171,7 +171,7 @@ class OfflineDrill extends Component {
                               (prevState) => ({
                                 correctQ: prevState.correctQ + 1,
                                 totalQ: prevState.totalQ + 1,
-                                displayQ: !prevState.displayQ,
+                                displayQ: true,
                                 correctAnimate: true
                               }),
                               () => {
